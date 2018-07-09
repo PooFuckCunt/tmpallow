@@ -1,0 +1,23 @@
+#!/bin/bash
+#check file names before running
+#assumes your original hosts file is called /etc/hosts.bk no error correcting
+#anything already in a file named /etc/hosts.temp will be overwritten
+#amount of time measured in seconds for the hosts to be allowed
+seconds=300
+if [ -e /etc/hosts.bk ]
+then
+    echo "Do nothing" > /dev/null
+     else
+    echo "read the comments"; exit
+fi
+
+if [ -e /etc/hosts.temp ]
+then
+    echo "hosts already unblocked" && exit
+     else
+    echo "Do nothing" > /dev/null
+fi
+sudo mv /etc/hosts /etc/hosts.temp
+sudo cp /etc/hosts.bk /etc/hosts
+echo "hosts unblocked for 5 minutes"
+sleep $seconds && sudo mv /etc/hosts.temp /etc/hosts&
