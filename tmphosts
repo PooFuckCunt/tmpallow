@@ -1,7 +1,7 @@
 #!/bin/bash
 #check file names before running
-#assumes your original hosts file is called /etc/hosts.bk no error correcting
-#anything already in a file named /etc/hosts.temp will be overwritten
+#if you do not have your original hosts file named /etc/hosts.bk script will exit.
+#if a file named /etc/hosts.temp already exists script will exit
 #amount of time measured in seconds for the hosts to be allowed
 seconds=300
 if [ -e /etc/hosts.bk ]
