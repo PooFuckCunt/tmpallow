@@ -1,0 +1,1 @@
+This is meant for people who have host blocking enabled in their /etc/hosts file and want/need to disable all blocks temporarily for whatever reason.

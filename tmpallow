@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo cp /etc/hosts.bk /etc/hosts
+sleep 60
+sudo cp /etc/hosts.protected /etc/hosts
+
+
