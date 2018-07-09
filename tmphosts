@@ -1,9 +1,11 @@
 #!/bin/bash
 #check file names before running
-#if you do not have your original hosts file named /etc/hosts.bk script will exit.
-#if a file named /etc/hosts.temp already exists script will exit
+#if a file named /etc/hosts.temp already exists script will exit as it assumes the allowed hosts are running
+#if no hosts allow file called /etc/hosts.bk exists it will be created
+
 #amount of time measured in seconds for the hosts to be allowed
 seconds=300
+#do not edit after this line
 
 if [ -e /etc/hosts.bk ]
 then
