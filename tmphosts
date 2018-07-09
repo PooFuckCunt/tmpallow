@@ -4,8 +4,9 @@
 #if no hosts allow file called /etc/hosts.bk exists it will be created
 
 #amount of time measured in seconds for the hosts to be allowed
-seconds=300
+seconds=150
 #do not edit after this line
+minutes=`echo "scale=1; $seconds/60" | bc`
 
 if [ -e /etc/hosts.bk ]
 then
@@ -33,5 +34,5 @@ then
 fi
 sudo mv /etc/hosts /etc/hosts.temp
 sudo cp /etc/hosts.bk /etc/hosts
-echo "hosts unblocked for 5 minutes"
+echo "hosts unblocked for $minutes minutes"
 sleep $seconds && sudo mv /etc/hosts.temp /etc/hosts&
